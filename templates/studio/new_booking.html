@@ -1,0 +1,275 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>New Booking</title>
+</head>
+<body>
+    <h1>New Booking</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Submit</button>
+    </form>
+    <a href="{% url 'booking_list' %}">Back to Bookings</a>
+</body>
+</html> -->
+
+<!-- 
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>New Booking</title>
+</head>
+<body>
+    <h1>Create New Booking</h1>
+    <form method="post">
+        {% csrf_token %}
+        
+        <h2>Client Information</h2>
+        {{ client_form.as_p }}
+        
+        <h2>Photographer Information</h2>
+        {{ photographer_form.as_p }}
+        
+        <h2>Booking Details</h2>
+        {{ booking_form.as_p }}
+        
+        <button type="submit">Submit</button>
+    </form>
+
+    <a href="{% url 'booking_list' %}">Back to Bookings</a>
+</body>
+</html> -->
+<!-- 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create New Booking</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        h2 {
+            color: #333;
+            font-size: 1.2em;
+            margin-top: 20px;
+        }
+        form {
+            margin: 20px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        form p {
+            font-size: 1em;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        a:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>Create New Booking</h1>
+    <form method="post">
+        {% csrf_token %}
+        
+        <h2>Client Information</h2>
+        {{ client_form.as_p }}
+        
+        <h2>Photographer Information</h2>
+        {{ photographer_form.as_p }}
+        
+        <h2>Booking Details</h2>
+        {{ booking_form.as_p }}
+        
+        <button type="submit">Submit</button>
+    </form>
+
+    <a href="{% url 'booking_list' %}">Back to Bookings</a>
+</body>
+</html> -->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create New Booking</title>
+    <style>
+        /* General page styling */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            margin: 0;
+        }
+
+        h2 {
+            color: #333;
+            font-size: 1.2em;
+            margin-top: 20px;
+        }
+
+        /* Form container styling */
+        form {
+            margin: 40px auto;
+            padding: 30px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 600px;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            font-size: 1em;
+            transition: border-color 0.3s ease-in-out;
+        }
+
+        /* Style the input fields */
+        input[type="text"], input[type="email"], input[type="tel"], input[type="date"], input[type="time"], textarea {
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        /* Focus effect on input fields */
+        .form-control:focus {
+            border-color: #4CAF50;
+            outline: none;
+            box-shadow: 0 0 10px rgba(76, 175, 80, 0.2);
+        }
+
+        /* Style the textarea field */
+        textarea.form-control {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        /* Submit button styling */
+        button {
+            padding: 12px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1.1em;
+            width: 100%;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        /* Back link styling */
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        a:hover {
+            background-color: #45a049;
+        }
+
+        /* Styling the form labels */
+        label {
+            font-size: 1.1em;
+            color: #333;
+            margin-bottom: 5px;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <h1>Create New Booking</h1>
+    <form method="post">
+        {% csrf_token %}
+
+        <h2>Client Information</h2>
+        <label for="id_name">Full Name</label>
+        {{ client_form.name }}
+        <label for="id_email">Email Address</label>
+        {{ client_form.email }}
+        <label for="id_phone">Phone Number</label>
+        {{ client_form.phone }}
+
+        <h2>Photographer Information</h2>
+        <label for="id_name">Photographer Name</label>
+        {{ photographer_form.name }}
+        <label for="id_expertise">Expertise</label>
+        {{ photographer_form.expertise }}
+
+        <h2>Booking Details</h2>
+        <label for="id_shoot_type">Shoot Type</label>
+        {{ booking_form.shoot_type }}
+        <label for="id_date">Booking Date</label>
+        {{ booking_form.date }}
+        <label for="id_time">Booking Time</label>
+        {{ booking_form.time }}
+        <label for="id_location">Location</label>
+        {{ booking_form.location }}
+        <label for="id_notes">Additional Notes</label>
+        {{ booking_form.notes }}
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <a href="{% url 'booking_list' %}">Back to Bookings</a>
+</body>
+</html>
